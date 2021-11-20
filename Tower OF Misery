@@ -1,0 +1,176 @@
+_G.Key = "C0AC46A9-387F-70A4-AF62-4F85C7A80A70"
+
+local keys = {
+    "C0AC46A9-387F-70A4-AF62-4F85C7A80A70",
+    "7CDC5B6D-A2E7-621B-C9AF-BE5C05248986",
+    "2337E86B-26DC-B020-1346-28287B74D9AC",
+    "2D31CEA2-58FB-C92D-46E2-13A762CA8DB2",
+    "6AE5AE54-2156-F605-2483-807101B615A7",
+    "DA96C3F9-8525-8DE0-14C7-437F623BC531",
+    "E040E2AF-60DB-B96E-9A98-93798FBC1E75",
+    "13F3E708-42AF-DC7B-3E3A-F43D718EA243",
+    "204DEC34-C1D2-D3CB-1AE7-8E05B08BD8C1",
+    "2D8C0855-0605-70B3-94D9-1D39F0C31D6B",
+    "A43A4CED-E06C-C59B-C297-97D9CEFD3D19",
+    "5EC41354-4781-E1C4-C1BF-D9CB35FAD495",
+    "D7E8719A-37F5-9063-2D93-8C6D6BFA570C",
+    "3B9AE8BC-5D91-FD27-1C1F-A8561E498DCA",
+    "C043B978-FC6C-7A24-A564-6D18DA63E453",
+    "1FE3EFAE-6049-557F-2DA5-B3DEA167C272",
+    "A941B905-2AE0-ECA5-6AA3-46145CA8EC0C",
+    "8B68A511-F730-A485-657D-F7CE7F2F5417",
+    "572949B1-651E-483E-963B-DA19D4D1564D",
+    "B9E2F420-6C0E-5028-B634-626B56468F1F",
+    "C8E9A949-2A26-D902-312C-7DB99AE3A4D6",
+    "C4B0510B-CFA1-E5B2-EF0D-23B416080F2A",
+    "D684E7B2-C181-7CA7-310D-D3DCE58A5BF2",
+    "E107DB9E-4865-AEF2-A7E2-E84B6751A6A7",
+    "93F673D8-FDE3-EDCE-ED29-B2802C980E5A",
+    "9AB652E3-CE51-DEA5-4831-FCF18A74FAD5",
+    "1A694A16-98F8-76E3-6EDA-AC9E3AD2B4C3",
+    "DA5DA130-9FD6-4B7A-6B4A-EA4FE5B7927A",
+    "FC2ACA38-7BF2-649F-A165-5B3D58A37210",
+    "6D5D630D-871F-3F4B-E1B1-E20F1265E45A",
+    "38426059-98AD-4848-17E8-11563C4EBE84",
+    "324202D6-4BE5-180A-6907-5F3AC4DA8EF0",
+    "623C2749-BC2D-FD6A-7C9D-FDEC797456A1",
+    "9869AE1B-8637-D323-BA20-C2C49A567E82",
+    "FBD59509-2405-59A0-D57D-84BEA6D59B98",
+    "41503B7F-513B-781A-8E02-CFD1D585D21B",
+    "FD7BF418-123C-9876-2426-6D29BE80782F",
+    "9328ABB3-F401-B479-D97F-FEB85EAD0C2B",
+    "75DCAB0A-45E8-BC36-78CE-57F2E30FBC8D",
+    "903D49E4-6029-253D-A87A-AB890EA657C5",
+    "D410FABF-80D0-A6E4-6E8C-9698F734915E",
+    "4F7484F0-42D0-5680-4868-2CACFE0F99EC",
+    "25D643A7-D384-1FCE-C868-2FB1F2624679",
+    "5927C6DB-E7F6-4FE4-60D6-2C9C43E7ACBE",
+    "2817AD56-CA7C-B4E9-76B5-D737B8B68512",
+    "76FBC79D-8347-7C6B-438D-6D0C27D40AB1",
+    "45FD9BCE-3A6F-1041-D072-D02C5BE19EC8",
+    "3D19F081-14E4-359A-FB53-56AC0F65D57D",
+    "CAECBCDE-4EB1-275D-597C-85740740AE75",
+    "3F6803E2-898D-B137-BE09-8D4DB0F03957"
+}
+
+local counter = 1
+local keyCheck
+for i,v in pairs(keys) do
+    if counter == #keys then
+    --not whitelisted!
+    keys = ""
+    game.Players.LocalPlayer:Kick("Key ผิด!!!")
+    else
+        if v == _G.Key then
+            --Whitelisted!
+            print("Whitelist สำเร็จ!")
+            keyCheck = _G.Key
+            keys = ""
+        else
+            counter = counter +1
+        end
+    end
+end
+
+while true do
+    if _G.Key == keyCheck then
+        local TweenService = game:GetService("TweenService")
+
+if game.PlaceId == 4954752502 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rain Hub", "Midnight")
+    
+    local Main = Window:NewTab("Main")
+    local Teleport = Window:NewTab("Teleport")
+    local Credit = Window:NewTab("Credit")
+    local MainSection = Main:NewSection("Auto Farm")
+    local TeleportSection = Teleport:NewSection("Teleport")
+    local CreditSection = Credit:NewSection("Credit")
+    
+    -----Main-----
+    
+    MainSection:NewToggle("Auto Farm Coin[Not Toggle AFK Only]", "Toggle To Auto Farm Coin", function(v)
+        
+    if v then
+        while wait() do
+            local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+            local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+            local Tween2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(30), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+            local Tween3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+            Tween1:Play()
+            wait(10)
+            Tween2:Play()
+            wait(30)
+            Tween3:Play()
+        end
+    end
+    end)
+    
+    -----Teleport-----
+
+    TeleportSection:NewButton("ObbyFinishRoom", "แนะนำให้เข้าห้องก่อนนะครับ", function()
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(21.1753006, 254.999954, 3023.06104, -0.99995625, -6.40499707e-08, -0.00935108308, -6.34701323e-08, 1, -6.23041103e-08, 0.00935108308, -6.17078726e-08, -0.99995625)
+    end)
+    
+    TeleportSection:NewButton("Intant Finish", "ชนะชนะโดยไม่ต้องวาป", function()
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local tween = TweenService:Create(HumanoidRootPart,TweenInfo.new(0.000000000000000001), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        local tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(0.3), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+        local tween2 = TweenService:Create(HumanoidRootPart,TweenInfo.new(0.3), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        tween:Play()
+        wait(0.33)
+        tween1:Play()
+        wait(0.3)
+        tween2:Play()
+    end)
+
+    TeleportSection:NewDropdown("Teleport", "เอาไว้Teleportไปยัง ด่านอื่นๆ", {"Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5", "Finish", "FinishRoomIn", "FinishRoomOut"}, function(v)
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+            if v == "Stage 1" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                HumanoidRootPart.CFrame = CFrame.new(25.188982, 3.49987745, 49.171566, -0.0348999724, 0, 0.999390781, 0, 1, 0, -0.999390781, 0, -0.0348999724)
+            elseif v == "Stage 2" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                HumanoidRootPart.CFrame = CFrame.new(-65.5682373, 53.5001564, 47.1625671, 0.0784431472, -7.92956953e-08, -0.996918619, 6.27545873e-08, 1, -7.46029158e-08, 0.996918619, -5.67091227e-08, 0.0784431472)
+            elseif v == "Stage 3" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                HumanoidRootPart.CFrame = CFrame.new(25.2871399, 103.500114, 49.0800743, -0.0174421854, -3.79158998e-08, 0.999847889, 9.30284827e-08, 1, 3.95445348e-08, -0.999847889, 9.37040738e-08, -0.0174421854)
+            elseif v == "Stage 4" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                HumanoidRootPart.CFrame = CFrame.new(-66.388443, 153.499771, 47.5095177, 0.0436190739, -7.43006581e-08, -0.999048233, -7.140234e-08, 1, -7.74889131e-08, 0.999048233, 7.47143716e-08, 0.0436190739)
+            elseif v == "Stage 5" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                HumanoidRootPart.CFrame = CFrame.new(25.6786957, 203.500092, 48.7804222, -0.034902595, -8.53443254e-08, 0.999390721, 1.80039237e-08, 1, 8.60251248e-08, -0.999390721, 2.09954543e-08, -0.034902595)
+            elseif v == "Finish" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local TweenService = game:GetService("TweenService")
+        local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+        Tween1:Play()
+        Tween:Play()
+            elseif v == "FinishRoomOut" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local TweenService = game:GetService("TweenService")
+
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(1.44993114, 254.000076, 101.765411, -0.930872679, -3.40251134e-08, -0.36534369, -4.79285873e-08, 1, 2.89872197e-08, 0.36534369, 4.44938166e-08, -0.930872679)})
+        Tween:Play()
+            elseif v == "FinishRoomIn" then
+                local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local TweenService = game:GetService("TweenService")
+
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(28.7164764, 233.999954, 2821.16528, -0.940591991, 6.48861231e-08, -0.339539021, 9.06554121e-08, 1, -6.00332442e-08, 0.339539021, -8.7247841e-08, -0.940591991)})
+        Tween:Play()
+            end
+    end)
+    
+    -----Credit-----
+    
+    CreditSection:NewLabel("Youtube : Zenzei No.1")
+
+end
+    else
+        game.Players.LocalPlayer:Kick("ไม่มี Key แล้วจะใส่ทำไมไอ้เหี้ย!!!")
+    end
+    wait()
+end
