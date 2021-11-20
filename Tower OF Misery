@@ -1,3 +1,5 @@
+_G.Key = "Key1"
+
 local keys = {
     "C0AC46A9-387F-70A4-AF62-4F85C7A80A70",
     "7CDC5B6D-A2E7-621B-C9AF-BE5C05248986",
@@ -60,19 +62,7 @@ for i,v in pairs(keys) do
     game.Players.LocalPlayer:Kick("Key ผิด!!!")
     else
         if v == _G.Key then
-            --Whitelisted!
-            print("Whitelist สำเร็จ!")
-            keyCheck = _G.Key
-            keys = ""
-        else
-            counter = counter +1
-        end
-    end
-end
-
-while true do
-    if _G.Key == keyCheck then
-        local TweenService = game:GetService("TweenService")
+            local TweenService = game:GetService("TweenService")
 
 if game.PlaceId == 4954752502 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
@@ -167,6 +157,17 @@ if game.PlaceId == 4954752502 then
     CreditSection:NewLabel("Youtube : Zenzei No.1")
 
 end
+            keyCheck = _G.Key
+            keys = ""
+        else
+            counter = counter +1
+        end
+    end
+end
+
+while true do
+    if _G.Key == keyCheck then
+        
     else
         game.Players.LocalPlayer:Kick("ไม่มี Key แล้วจะใส่ทำไมไอ้เหี้ย!!!")
     end
