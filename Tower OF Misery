@@ -113,6 +113,7 @@ for i,v in pairs(keys) do
             local TweenService = game:GetService("TweenService")
 
 if game.PlaceId == 4954752502 then
+
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("Rain Hub", "Midnight")
     
@@ -125,23 +126,39 @@ if game.PlaceId == 4954752502 then
     
     -----Main-----
     
-    MainSection:NewToggle("Auto Farm Coin[Not Toggle AFK Only]", "Toggle To Auto Farm Coin", function(v)
-        
-    if v then
-        while wait() do
-            local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-            local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
-            local Tween2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(30), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
-            local Tween3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
-            Tween1:Play()
-            wait(10)
-            Tween2:Play()
-            wait(30)
-            Tween3:Play()
+    MainSection:NewToggle("Auto Farm Coin", "Toggle To Auto Farm Coin", function(v)
+
+        _G.Toggle = true
+
+        if v then
+            _G.Toggle = true
+        else
+            _G.Toggle = false
         end
-    end
-    end)
-    
+
+        if v then
+            
+            if _G.Toggle == true then
+                while _G.Toggle == true do
+                    local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                    local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+                    local Tween2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(10), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+                    local Tween3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+                    Tween1:Play()
+                    wait(1)
+                    if _G.Toggle == false then
+                        return
+                    end
+                    Tween2:Play()
+                    wait(10)
+                    Tween3:Play()
+                    if _G.Toggle == false then
+                        return
+                    end
+                end
+            end
+        end
+
     -----Teleport-----
 
     TeleportSection:NewButton("ObbyFinishRoom", "แนะนำให้เข้าห้องก่อนนะครับ", function()
@@ -204,6 +221,35 @@ if game.PlaceId == 4954752502 then
     
     CreditSection:NewLabel("Youtube : Zenzei No.1")
 
+    
+end)
+
+if game.PlaceId == 6766156863 then
+
+    local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+ 
+    local TweenService =  game:GetService("TweenService")
+    
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rain Hub", "Midnight")
+ 
+    local MainTab = Window:NewTab("Main")
+    local TeleportTab = Window:NewTab("Teleport")
+    local CreditTab = Window:NewTab("Credit")
+ 
+    local AutoFarmSection = MainTab:NewSection("Auto Farm")
+    local TeleportSection = TeleportTab:NewSection("Teleport")
+    local CreditSection = CreditTab:NewSection("Credit")
+ 
+    AutoFarmSection:NewToggle("Auto Farm [Not Toggle AFK Only]", "กดเพื่อ Atuto Farm", function(state)
+     if state then
+         print()
+     end
+     
+     TeleportSection:NewDropdown("Teleport", "กด Teleport", {"Start Area", "Gym Area", "Food Area", "Arcade Area", "Farm Area", "Castle Area", "Steampunk Area", "Disco Area", "Space Area", "Candy Area", "Lab Area", "Tropical Area", "Dino Area", "Retro Area", "Winter Area", "Deep Sea Area"}, function(currentOption)
+
+     end)
+    end)
 end
             keyCheck = _G.Key
             keys = ""
@@ -220,4 +266,5 @@ while true do
         game.Players.LocalPlayer:Kick("ไม่มี Key แล้วจะใส่ทำไมไอ้เหี้ย!!!")
     end
     wait()
+end
 end
