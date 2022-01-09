@@ -180,7 +180,7 @@ if game.PlaceId == 6266940721 then
     
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("Rain Hub", "Midnight")
-    
+
     local MainTab = Window:NewTab("Main")
 
 end
